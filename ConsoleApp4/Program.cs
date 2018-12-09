@@ -10,6 +10,20 @@ namespace ConsoleApp4
     {
         static void Main(string[] args)
         {
+            new Program().PrimeraPractica();
+        }
+
+        /// <summary>
+        /// este metodo muestra la primera practica
+        /// </summary>
+        public void PrimeraPractica()
+        {
+            foreach (var item in Empleado.GetAllEmpleados("v"))
+            {
+                Console.WriteLine("Nombre: " + item.Nombre + " " + item.Apellido);
+                Console.WriteLine("Sueldo: " + item.Sueldo + "\n");
+            }
+            Console.ReadKey();
         }
     }
 }
