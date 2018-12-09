@@ -9,6 +9,45 @@ namespace ConsoleApp4
 {
     class Controller
     {
+        public static void MostrarMatriz()
+        {
+            Console.Clear();
+            Console.WriteLine("===> MATRIZ 3X4 <===");
+            int[,] matriz = new int[3, 4];
+
+            for (int fila = 0; fila < 3; fila++)
+            {
+                for (int columna = 0; columna < 4; columna++)
+                {
+                    Console.Write("Ingrese un valor en la fila [{0}] columna [{1}]: ", fila, columna);
+                    matriz[fila, columna] = Convert.ToInt32(Console.ReadLine());
+                }
+                Console.WriteLine("");
+            }
+
+            Console.WriteLine("\nImprimiendo la primera fila...");
+            int[] fila1 = new int[4];
+            for (int i = 0; i < 3; i++)
+                for (int n = 0; n < 4; n++)
+                    if (i == 0) fila1[n] = matriz[i, n];
+            Console.WriteLine("[" + fila1[0] + "," + fila1[1] + "," + fila1[2] + "," + fila1[3] + "]");
+
+            Console.WriteLine("Imprimiendo la ultima fila...");
+            for (int i = 0; i < 3; i++)
+                for (int n = 0; n < 4; n++)
+                    if (i == 2) fila1[n] = matriz[i, n];
+            Console.WriteLine("[" + fila1[0] + "," + fila1[1] + "," + fila1[2] + "," + fila1[3] + "]");
+
+            Console.WriteLine("Imprimiendo la primera columna...");
+            for (int i = 0; i < 3; i++)
+                for (int n = 0; n < 4; n++)
+                    if (i >= 0 && n == 0) fila1[i] = matriz[i, n];
+            Console.WriteLine("[" + fila1[0] + "," + fila1[1] + "," + fila1[2] + "]");
+
+            Console.Write("\nPresione una tecla para continuar...\n");
+            Console.ReadKey();
+        }
+
         public static void MostrarMenu()
         {
             int valor = 1;

@@ -10,7 +10,8 @@ namespace ConsoleApp4
     {
         static void Main(string[] args)
         {
-            Controller.MostrarMenu();
+            Controller.MostrarMenu();     // Practica I
+            Controller.MostrarMatriz();   // Practica II
         }
     }
 }
